@@ -1,0 +1,45 @@
+export const questions = [
+  ['values', 'I am looking for a committed, long-term relationship.'],
+  ['values', 'Making time for family is important to me.'],
+  ['values', 'I value independence within a relationship.'],
+  ['values', 'I prefer to discuss disagreements openly.'],
+  ['values', 'I would like to have children in the future.'],
+  ['values', 'Shared cultural traditions matter in my daily life.'],
+  ['interests', 'I enjoy discovering new cafés and restaurants.'],
+  ['interests', 'I enjoy hiking and spending time outdoors.'],
+  ['interests', 'Music and live performances are a big part of my life.'],
+  ['interests', 'I enjoy reading, art, and thoughtful conversations.'],
+  ['interests', 'I love cooking and trying new recipes.'],
+  ['interests', 'Exploring places around Sri Lanka excites me.'],
+  ['lifestyle', 'I prefer an early morning to a late night.'],
+  ['lifestyle', 'Regular exercise is part of my routine.'],
+  ['lifestyle', 'I enjoy a spontaneous weekend plan.'],
+  ['lifestyle', 'I prefer a quiet evening at home to a busy event.'],
+  ['lifestyle', 'Keeping a consistent routine helps me feel my best.'],
+  ['lifestyle', 'I like to plan spending and save for the future.'],
+  ['personality', 'Meeting new people gives me energy.'],
+  ['personality', 'I like to take time before sharing personal feelings.'],
+  ['personality', 'I appreciate a partner who communicates frequently.'],
+  ['personality', 'Humour is how I connect with someone.'],
+  ['personality', 'I prefer to think things through before deciding.'],
+  ['personality', 'I feel comfortable asking directly for what I need.'],
+] as const;
+export const weights = { values: 0.35, interests: 0.25, lifestyle: 0.2, personality: 0.2 };
+export const interests = [
+  'Coffee',
+  'Books',
+  'Hiking',
+  'Music',
+  'Art',
+  'Travel in Sri Lanka',
+  'Cooking',
+  'Cinema',
+  'Fitness',
+  'Photography',
+];
+export const genders = ['Woman', 'Man', 'Non-binary', 'Self-described'] as const;
+export const goals = [
+  'Long-term relationship',
+  'Exploring a connection',
+  'Marriage-minded',
+] as const;

@@ -1,0 +1,3 @@
+-- Reference locations, questionnaire prompts, and packages are in versioned migrations.
+-- Fictional auth users are created separately by `npm run demo:seed` in LOCAL services only.
+-- No demo accounts, passwords, venue partnerships or public profiles are seeded into production.
