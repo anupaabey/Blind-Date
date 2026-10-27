@@ -1,5 +1,15 @@
 # Deploy with Supabase, GitHub and Vercel
 
+## Deploy the public site now
+
+Open [Vercel New Project](https://vercel.com/new), sign in, and import `anupaabey/Blind-Date` from GitHub. Use the Next.js preset, the repository root, Node 24, and the default `npm run build` command, then choose Deploy. The public site builds without external credentials; registration and account features remain explicitly unavailable until hosted Supabase is configured.
+
+The `.vercelignore` excludes local environment files, generated development credentials, local database configuration files, and browser-session artifacts from CLI uploads. Never copy the local `.env.local` to Vercel. After adding hosted Supabase configuration and the final `SITE_URL` in the project's secure environment settings, redeploy so Next.js rebuilds its routes with the new configuration.
+
+For an agent to deploy from this cloud workspace, allow `api.vercel.com` and `vercel.com` in environment networking and supply Vercel access securely through the environment settings or the official CLI login flow. Never paste a Vercel token in chat. A CLI installation or a successful local build does not create a hosted deployment.
+
+## Connect the production services
+
 1. Create a **separate production Supabase project**. Never copy the local Docker JWT secret, fake profiles or generated development credentials into it. Review migrations and apply them in filename order using the SQL editor or Supabase CLI (`supabase link` / `supabase db push`) with your own authenticated project access. Do not run local demo seeding against it.
 2. Enable Auth email confirmations, require passwords of at least 12 characters, disable anonymous sign-ins, configure production SMTP with sender-domain authentication and appropriate rate limits/CAPTCHA. Set the Auth site URL to the production HTTPS origin and allow the exact `/auth/callback` recovery and signup redirects. Use Supabase Auth's PKCE confirmation link or configure an email template using `/auth/callback?token_hash={{ .TokenHash }}&type=email`. Set appropriate session and security policies. Optional phone OTP requires a supported SMS provider connected through Supabase Auth; no fake verification fallback exists.
 3. Import the repository into Vercel as a Next.js project on Node 24. Set environment values securely in Vercel, using `.env.example` as the list of names. Only the project URL and **anon/publishable** API key may be `NEXT_PUBLIC_*`. `SUPABASE_SERVICE_ROLE_KEY` is a server-only Supabase service-role JWT, needed for account deletion, contact intake, notification delivery and payment callbacks. Never use a privileged key as the public anon key. Set `SITE_URL` to the canonical HTTPS origin; it is used for trusted Auth and payment redirects.

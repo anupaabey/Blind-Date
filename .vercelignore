@@ -1,0 +1,12 @@
+# Never upload local credentials, database configuration, or browser sessions.
+.env*
+.local/
+.vercel/
+node_modules/
+.next/
+.git/
+supabase/.temp/
+supabase/.branches/
+test-results/
+playwright-report/
+*.tsbuildinfo
